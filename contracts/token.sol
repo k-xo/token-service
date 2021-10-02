@@ -11,6 +11,10 @@ import '@openzeppelin/contracts/access/Ownable.sol';
 contract Token is ERC20, ERC20Burnable {
     address public owner;
 
+    /// @notice Deploys the ERC-20 token and mints the total supply to the owner -- factory owner
+    /// @param name sets name of the ERC-20 token
+    /// @param symbol sets symbol of the ERC-20 token
+    /// @param supply sets supply of the ERC-20 token
     constructor(
         string memory name,
         string memory symbol,
@@ -26,6 +30,8 @@ contract Token is ERC20, ERC20Burnable {
         _;
     }
 
+    /// @notice sets the amount of new supply to be minted to owner
+    /// @param amount the amount to be minted
     function mint(uint256 amount) public onlyOwner {
         _mint(owner, amount);
     }
