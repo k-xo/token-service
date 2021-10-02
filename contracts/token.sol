@@ -5,8 +5,11 @@ import '@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol';
 import '@openzeppelin/contracts/token/ERC20/ERC20.sol';
 import '@openzeppelin/contracts/access/Ownable.sol';
 
+/// @title ERC-20 token
+/// @author k-xo
+/// @notice ERC-20 token spec
 contract Token is ERC20, ERC20Burnable {
-    address owner;
+    address public owner;
 
     constructor(
         string memory name,

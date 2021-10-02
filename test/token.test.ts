@@ -44,4 +44,8 @@ describe('Token', function () {
   it('Should mint the total supply to the deployer', async function () {
     expect(await token.balanceOf(await deployer.getAddress())).to.equal(await token.totalSupply());
   });
+
+  it('Should expect factory and token to have the same owner', async function () {
+    expect(await factory.factoryOwner()).to.equal(await token.owner());
+  });
 });

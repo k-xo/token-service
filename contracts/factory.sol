@@ -9,7 +9,7 @@ import './token.sol';
 /// @notice Deploys ERC-20 tokens with mintable and burnable supply
 contract Factory {
     Token[] public tokens;
-    address factoryOwner;
+    address public factoryOwner;
 
     constructor() {
         factoryOwner = msg.sender;
