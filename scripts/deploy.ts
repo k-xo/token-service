@@ -1,19 +1,21 @@
-import { ethers, run } from 'hardhat'
+import { ethers, run } from 'hardhat';
 
 async function main() {
-  await run('compile')
+  await run('compile');
 
-  const Token = await ethers.getContractFactory('token')
-  const token = await Token.deploy('Asset', 'AST', 100000)
+  const Factory = await ethers.getContractFactory('Factory');
+  const factory = await Factory.deploy();
 
-  await token.deployed()
+  await factory.deployed();
 
-  console.log('Token deployed to:', token.address)
+  await factory.deployed();
+
+  console.log('Factory deployed to:', factory.address);
 }
 
 main()
   .then(() => process.exit(0))
   .catch((error) => {
-    console.error(error)
-    process.exit(1)
-  })
+    console.error(error);
+    process.exit(1);
+  });
