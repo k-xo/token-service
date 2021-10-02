@@ -24,7 +24,7 @@ contract Factory {
     /// @param tokenAddress address of deployed tokenAddress
     /// @param name name of deployed token
     /// @param symbol symbol of deployed token
-    event TokenCreated(address tokenAddress, string name, string symbol);
+    event TokenCreated(address indexed tokenAddress, string indexed name, string indexed symbol);
 
     /// @notice creates an ERC-20 token
     /// @param name sets the name of the token
